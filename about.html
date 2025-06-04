@@ -205,23 +205,23 @@
                     <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Students</h3>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="" class="text-decoration-none h6 m-0">Thahfeezul Quran for boys</a>
+                            <a href="admissions.html" class="text-decoration-none h6 m-0">Thahfeezul Quran for boys</a>
                             <span class="badge badge-primary badge-pill">96+</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="" class="text-decoration-none h6 m-0">Thahfeezul Quran for girls</a>
+                            <a href="admissions.html" class="text-decoration-none h6 m-0">Thahfeezul Quran for girls</a>
                             <span class="badge badge-primary badge-pill">148+</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="" class="text-decoration-none h6 m-0">Shareeah Studies</a>
+                            <a href="admissions.html" class="text-decoration-none h6 m-0">Shareeah Studies</a>
                             <span class="badge badge-primary badge-pill">186+</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="" class="text-decoration-none h6 m-0">Specialization in Islamic Jurisprudence</a>
+                            <a href="admissions.html" class="text-decoration-none h6 m-0">Specialization in Islamic Jurisprudence</a>
                             <span class="badge badge-primary badge-pill">12+</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                            <a href="" class="text-decoration-none h6 m-0">Qira'ath Studies</a>
+                            <a href="admissions.html" class="text-decoration-none h6 m-0">Qira'ath Studies</a>
                             <span class="badge badge-primary badge-pill"></span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center px-0">
@@ -235,21 +235,102 @@
 
                 <!-- Tag Cloud -->
                 <div class="mb-5">
-                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Features</h3>
-                    <div class="d-flex flex-wrap m-n1">
-                        <a href="" class="btn btn-outline-primary m-1">LIBRARY</a>
-                        <a href="" class="btn btn-outline-primary m-1">LAUNDRY</a>
-                        <a href="" class="btn btn-outline-primary m-1">QUALIFIED TEACHERS</a>
-                        <a href="" class="btn btn-outline-primary m-1">CREATIVE LEARNING</a>
-                        <a href="" class="btn btn-outline-primary m-1">INTERACTIVE ATMOSPHERE</a>
-                        <a href="" class="btn btn-outline-primary m-1">GOOD INFRASTRUCTURE</a>
-                        <a href="" class="btn btn-outline-primary m-1">QUALITY EDUCATION</a>
-                        <a href="" class="btn btn-outline-primary m-1">SMART CLASS ROOM</a>
-                        <a href="" class="btn btn-outline-primary m-1">ACCOMMODATION</a>
-                        <a href="" class="btn btn-outline-primary m-1">PLAY GROUND</a>
-                        <a href="" class="btn btn-outline-primary m-1">COMPUTER LAB</a>
-                    </div>
+    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Features</h3>
+    <div class="d-flex flex-wrap m-n1">
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="library">LIBRARY</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="laundry">LAUNDRY</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="teachers">QUALIFIED TEACHERS</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="learning">CREATIVE LEARNING</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="atmosphere">INTERACTIVE ATMOSPHERE</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="infrastructure">GOOD INFRASTRUCTURE</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="education">QUALITY EDUCATION</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="classroom">SMART CLASS ROOM</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="accommodation">ACCOMMODATION</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="playground">PLAY GROUND</a>
+        <a href="#" class="btn btn-outline-primary m-1 feature-btn" data-feature="lab">COMPUTER LAB</a>
+    </div>
+</div>
+
+<!-- Feature Modal -->
+<div class="modal fade" id="featureModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0">
+            <div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+                <button type="button" class="btn-close bg-white rounded-circle p-2 shadow-sm" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <img id="featureImage" src="" class="img-fluid w-100 rounded" alt="Feature Image">
+                <div class="p-4">
+                    <h4 id="featureTitle" class="mb-3"></h4>
+                    <p id="featureDescription" class="text-muted"></p>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .modal-content {
+        overflow: hidden;
+    }
+    .btn-close {
+        opacity: 1;
+    }
+    #featureImage {
+        max-height: 400px;
+        object-fit: cover;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const featureButtons = document.querySelectorAll('.feature-btn');
+    const featureModal = new bootstrap.Modal(document.getElementById('featureModal'));
+    const featureImage = document.getElementById('featureImage');
+    const featureTitle = document.getElementById('featureTitle');
+    const featureDescription = document.getElementById('featureDescription');
+    
+    // Feature data (in a real app, this might come from an API)
+    const featureData = {
+        library: {
+            image: 'img/blog-17.jpg',
+            title: 'Modern Library',
+            description: 'Our state-of-the-art library offers a vast collection of books, digital resources, and quiet study spaces for students.'
+        },
+        laundry: {
+            image: 'img/blog-17.jpg',
+            title: 'Laundry Services',
+            description: 'On-campus laundry facilities are available for student use, with modern washers and dryers maintained for your convenience.'
+        },
+        // Add similar objects for all other features
+        teachers: {
+            image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+            title: 'Qualified Teachers',
+            description: 'Our faculty members are highly qualified professionals with years of experience in their respective fields.'
+        }
+        // Continue with other features...
+    };
+    
+    featureButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const feature = this.getAttribute('data-feature');
+            const data = featureData[feature] || {
+                image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+                title: this.textContent,
+                description: 'More information about this feature will be available soon.'
+            };
+            
+            featureImage.src = data.image;
+            featureImage.alt = data.title;
+            featureTitle.textContent = data.title;
+            featureDescription.textContent = data.description;
+            
+            featureModal.show();
+        });
+    });
+});
+</script>
             </div>
         </div>
     </div>
